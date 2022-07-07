@@ -8,8 +8,7 @@ services:
     image: 'janus-gateway'
     command: ["/usr/local/bin/janus", "-F", "/usr/local/etc/janus"]
     volumes:
-      - ./etc/:/opt/janus/etc/janus/
-      - ./log/janus.log:/var/log/janus.log
+      - "./etc/:/usr/local/etc/janus"
     ports:
       - "8188:8188"
       - "8088:8088"

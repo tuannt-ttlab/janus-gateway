@@ -1,6 +1,6 @@
 # Install
 
 ```
-docker build -t janus-gateway .
-docker-compose up
+sudo docker build -t janus-gateway .
+sudo docker-compose up
 ```
