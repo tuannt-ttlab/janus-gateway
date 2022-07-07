@@ -53,7 +53,7 @@ RUN git clone https://github.com/alanxz/rabbitmq-c && \
 	git submodule init && \
 	git submodule update && \
 	mkdir build && cd build && \
-	cmake -DCMAKE_INSTALL_PREFIX=/usr .. && \
+	make -DCMAKE_INSTALL_PREFIX=/usr .. && \
 	make && sudo make install
 
 COPY . /usr/local/src/janus-gateway
