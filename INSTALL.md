@@ -2,5 +2,5 @@
 
 ```
 docker build -t janus-gateway .
-docker-composer up
+docker-compose up
 ```
