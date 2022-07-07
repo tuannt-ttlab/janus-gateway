@@ -8,6 +8,7 @@ RUN apt-get -y update && \
 		libmicrohttpd-dev \
 		libjansson-dev \
 		libssl-dev \
+		libsrtp-dev \
 		libsofia-sip-ua-dev \
 		libglib2.0-dev \
 		libopus-dev \
@@ -47,6 +48,14 @@ RUN cd /tmp && \
 	./configure --prefix=/usr && \
 	make && \
 	make install
+
+RUN git clone https://github.com/alanxz/rabbitmq-c && \
+	cd rabbitmq-c && \
+	git submodule init && \
+	git submodule update && \
+	mkdir build && cd build && \
+	cmake -DCMAKE_INSTALL_PREFIX=/usr .. && \
+	make && sudo make install
 
 COPY . /usr/local/src/janus-gateway
 
