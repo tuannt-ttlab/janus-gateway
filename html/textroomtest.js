@@ -14,7 +14,7 @@ var myusername = null;
 var myid = null;
 var participants = {}
 var transactions = {}
-
+var server = "wss://api.streaming.tokyotechlab.com";
 $(document).ready(function() {
 	// Initialize the library (all console debuggers enabled)
 	Janus.init({debug: "all", callback: function() {

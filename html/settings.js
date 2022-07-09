@@ -49,11 +49,11 @@
 // in the presented order. The first working server will be used for
 // the whole session.
 //
-var server = null;
-if(window.location.protocol === 'http:')
-	server = "http://" + window.location.hostname + ":8088/janus";
-else
-	server = "https://" + window.location.hostname + ":8089/janus";
+var server = "wss://api.streaming.tokyotechlab.com";
+// if(window.location.protocol === 'http:')
+// 	server = "http://" + window.location.hostname + ":8088/janus";
+// else
+// 	server = "https://" + window.location.hostname + ":8089/janus";
 
 // When creating a Janus object, we can also specify which STUN/TURN
 // servers we'd like to use to gather additional candidates. This is
@@ -72,11 +72,11 @@ else
 // be automatically contacted as a STUN server too, meaning it will be
 // used to gather both server reflexive and relay candidates.
 //
-//		var iceServers = [{urls: "turn:yourturnserver.com:3478", username: "janususer", credential: "januspwd"}]
+		var iceServers = [{urls: "turn:18.143.67.203:3478?transport=udp", username: "turnserver", credential: "turnserver"}]
 //		var iceServers: [{urls: "turn:yourturnserver.com:443?transport=tcp", username: "janususer", credential: "januspwd"}]
 //		var iceServers: [{urls: "turns:yourturnserver.com:443?transport=tcp", username: "janususer", credential: "januspwd"}]
 //
 // By default we leave the iceServers variable empty, which again means
 // janus.js will fallback to the Google STUN server by default:
 //
-var iceServers = null;
+// var iceServers = null;
