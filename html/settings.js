@@ -64,7 +64,7 @@ var server = "wss://api.streaming.tokyotechlab.com";
 // library automatically uses the free Google STUN servers, which means
 // it's equivalent to setting:
 //
-//		var iceServers = [{urls: "stun:stun.l.google.com:19302"}];
+		// var iceServers = [{urls: "stun:stun.l.google.com:19302"}];
 //
 // Here are some examples of how an iceServers field may look like to
 // support TURN instead. Notice that, when a TURN server is configured,
