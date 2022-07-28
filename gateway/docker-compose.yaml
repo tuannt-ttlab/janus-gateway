@@ -1,11 +1,14 @@
-version: '2.1'
+version: "3.9"
 services:
 
   #
   # janus-gateway
   #
   janus-gateway:
-    image: 'janus-gateway'
+    build:
+      context: .
+    image: janus-gateway
+    container_name: janus-gateway
     command: ["/usr/local/bin/janus", "-F", "/usr/local/etc/janus"]
     volumes:
       - "./etc/:/usr/local/etc/janus"
@@ -18,3 +21,10 @@ services:
       - "7088:7088"
       - "7089:7089"
     restart: always
+    networks:
+      - janus_network
+
+networks:
+  janus_network:
+    name: janus_network
+    driver: bridge

@@ -2,6 +2,7 @@ FROM debian:bullseye-slim
 
 RUN apt-get -y update && \
 	apt-get install -y \
+		apt-utils \
 		libavutil-dev \
 		libavformat-dev \
 		libavcodec-dev \

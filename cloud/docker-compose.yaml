@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+
+  janus-cloud:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: janus-cloud
+    volumes:
+      - "./conf/:/home/janus/conf"
+    ports:
+      - "8288:8288"
+      - "8100:8100"
+      - "8200:8200"
+    networks:
+      - janus_network
+
+networks:
+  janus_network:
+    name: janus_network
+    driver: bridge
