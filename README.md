@@ -28,7 +28,7 @@ apt-get install acl
 sudo setfacl -m user:$USER:rw /var/run/docker.sock
 ```
 
-1 install docker-compose
+2 install docker-compose
 -----------------
 
 ```sh
@@ -40,7 +40,17 @@ docker-compose --version
 ```
 
 
-2 Run docker
+3 Config cloud/conf/janus-sentinel.yml
+-----------------
+
+```sh
+copy conf.example conf
+
+public_ip: "ec2 public ip"
+```
+
+
+4 Run docker
 -----------------
 
 ```sh
