@@ -11,7 +11,7 @@ WORKDIR /home/janus
 
 ENV PATH="/home/janus/.local/bin:${PATH}"
 
-COPY --chown=janus:janus . ./
+COPY --chown=janus:janus ./cloud ./
 
 RUN pip install .
 

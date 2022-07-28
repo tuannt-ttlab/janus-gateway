@@ -1,0 +1,41 @@
+version: "3.9"
+services:
+
+  janus-gateway:
+    build:
+      context: .
+      dockerfile: ./gateway/Dockerfile
+    image: janus-gateway
+    command: ["/usr/local/bin/janus", "-F", "/usr/local/etc/janus"]
+    volumes:
+      - "./gateway/etc/:/usr/local/etc/janus"
+    ports:
+      - "8188:8188"
+      - "8088:8088"
+      - "8089:8089"
+      - "8889:8889"
+      - "8000:8000"
+      - "7088:7088"
+      - "7089:7089"
+    restart: always
+    networks:
+      - janus_network
+
+  janus-cloud:
+    build:
+      context: .
+      dockerfile: ./cloud/Dockerfile
+    image: janus-cloud
+    volumes:
+      - "./cloud/conf/:/home/janus/conf"
+    ports:
+      - "8288:8288"
+      - "8100:8100"
+      - "8200:8200"
+    networks:
+      - janus_network
+
+networks:
+  janus_network:
+    name: janus_network
+    driver: bridge
