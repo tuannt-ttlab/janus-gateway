@@ -11,8 +11,8 @@ WORKDIR /home/janus
 
 ENV PATH="/home/janus/.local/bin:${PATH}"
 
-COPY --chown=janus:janus ./cloud ./
+COPY --chown=janus:janus . ./
 
 RUN pip install .
 
-CMD ["janus-sentinel", "/home/janus/conf/janus-sentinel.yml"]
+CMD ["janus-proxy", "/home/janus/conf/janus-proxy.yml"]

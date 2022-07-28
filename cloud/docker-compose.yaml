@@ -4,7 +4,7 @@ services:
   janus-cloud:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: DockerfileProxy
     image: janus-cloud
     volumes:
       - "./conf/:/home/janus/conf"
