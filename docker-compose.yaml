@@ -8,7 +8,9 @@ services:
     image: janus-gateway
     command: ["/usr/local/bin/janus", "-F", "/usr/local/etc/janus"]
     volumes:
-      - "./gateway/etc/:/usr/local/etc/janus"
+      - "./gateway/etc/janus.jcfg:/usr/local/etc/janus/janus.jcfg"
+      - "./gateway/etc/janus.transport.websockets.jcfg:/usr/local/etc/janus/janus.transport.websockets.jcfg"
+      - "./gateway/etc/janus.transport.http.jcfg:/usr/local/etc/janus/janus.transport.http.jcfg"
     ports:
       - "8188:8188"
       - "8088:8088"
